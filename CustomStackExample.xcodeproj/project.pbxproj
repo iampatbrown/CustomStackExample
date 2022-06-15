@@ -8,17 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		239D5B172859EADC00DE71D8 /* CustomStackExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239D5B162859EADC00DE71D8 /* CustomStackExampleApp.swift */; };
-		239D5B192859EADC00DE71D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239D5B182859EADC00DE71D8 /* ContentView.swift */; };
 		239D5B1B2859EADC00DE71D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239D5B1A2859EADC00DE71D8 /* Assets.xcassets */; };
-		239D5B1E2859EADC00DE71D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239D5B1D2859EADC00DE71D8 /* Preview Assets.xcassets */; };
+		239D5B272859EBAE00DE71D8 /* NavigationBarAppearance in Frameworks */ = {isa = PBXBuildFile; productRef = 239D5B262859EBAE00DE71D8 /* NavigationBarAppearance */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		239D5B132859EADC00DE71D8 /* CustomStackExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomStackExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		239D5B162859EADC00DE71D8 /* CustomStackExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackExampleApp.swift; sourceTree = "<group>"; };
-		239D5B182859EADC00DE71D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		239D5B1A2859EADC00DE71D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		239D5B1D2859EADC00DE71D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		239D5B242859EB8D00DE71D8 /* NavigationBarAppearance */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NavigationBarAppearance; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +24,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239D5B272859EBAE00DE71D8 /* NavigationBarAppearance in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,8 +34,10 @@
 		239D5B0A2859EADC00DE71D8 = {
 			isa = PBXGroup;
 			children = (
+				239D5B242859EB8D00DE71D8 /* NavigationBarAppearance */,
 				239D5B152859EADC00DE71D8 /* CustomStackExample */,
 				239D5B142859EADC00DE71D8 /* Products */,
+				239D5B252859EBAE00DE71D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,19 +53,16 @@
 			isa = PBXGroup;
 			children = (
 				239D5B162859EADC00DE71D8 /* CustomStackExampleApp.swift */,
-				239D5B182859EADC00DE71D8 /* ContentView.swift */,
 				239D5B1A2859EADC00DE71D8 /* Assets.xcassets */,
-				239D5B1C2859EADC00DE71D8 /* Preview Content */,
 			);
 			path = CustomStackExample;
 			sourceTree = "<group>";
 		};
-		239D5B1C2859EADC00DE71D8 /* Preview Content */ = {
+		239D5B252859EBAE00DE71D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				239D5B1D2859EADC00DE71D8 /* Preview Assets.xcassets */,
 			);
-			path = "Preview Content";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +81,9 @@
 			dependencies = (
 			);
 			name = CustomStackExample;
+			packageProductDependencies = (
+				239D5B262859EBAE00DE71D8 /* NavigationBarAppearance */,
+			);
 			productName = CustomStackExample;
 			productReference = 239D5B132859EADC00DE71D8 /* CustomStackExample.app */;
 			productType = "com.apple.product-type.application";
@@ -125,7 +126,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				239D5B1E2859EADC00DE71D8 /* Preview Assets.xcassets in Resources */,
 				239D5B1B2859EADC00DE71D8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				239D5B192859EADC00DE71D8 /* ContentView.swift in Sources */,
 				239D5B172859EADC00DE71D8 /* CustomStackExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +265,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CustomStackExample/Preview Content\"";
 				DEVELOPMENT_TEAM = G7SC3UG6VB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -295,7 +293,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CustomStackExample/Preview Content\"";
 				DEVELOPMENT_TEAM = G7SC3UG6VB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -339,6 +336,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		239D5B262859EBAE00DE71D8 /* NavigationBarAppearance */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NavigationBarAppearance;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 239D5B0B2859EADC00DE71D8 /* Project object */;
 }
