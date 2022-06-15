@@ -1,27 +1,32 @@
 import NavigationBarAppearance
 import SwiftUI
 
-struct ContentView: View {
-  let colors: [Color] = [
-    .red,
-    .green,
-    .orange,
-    .purple,
-    .blue,
-    .pink,
-    .indigo,
-    .black,
-    .brown,
-    .yellow
-  ]
+let colors: [Color] = [
+  .red,
+  .green,
+  .orange,
+  .purple,
+  .blue,
+  .pink,
+  .indigo,
+  .black,
+  .brown,
+  .yellow
+]
 
+struct ContentView: View {
   var body: some View {
     NavigationView {
-      List(colors, id: \.description, rowContent: ColorRow.init(color:))
-        .listStyle(.plain)
-        .navigationBarTitle("Colors")
-        .navigationBarBackgroundColor(Color(white: 0.95))
-        .navigationBarTitleColor(.black)
+      List {
+        NavigationLink("Color Picker") { PickerView() }
+          .frame(height: 60)
+        ForEach(colors, id: \.description, content: ColorRow.init(color:))
+          .listStyle(.plain)
+          .navigationBarTitle("Colors")
+          .navigationBarBackgroundColor(Color(white: 0.95))
+          .navigationBarTitleColor(.black)
+      }
+        
     }
     .navigationViewStyle(.customStack)
   }
@@ -55,11 +60,11 @@ struct ColorView: View {
         Text("Details page")
           .navigationTitle("Details")
       } label: {
-      Rectangle()
-        .foregroundColor(color)
-        .overlay(Text("Press me!").foregroundColor(.primary))
-        .aspectRatio(1, contentMode: .fit)
-        .padding()
+        Rectangle()
+          .foregroundColor(color)
+          .overlay(Text("Press me!").foregroundColor(.primary))
+          .aspectRatio(1, contentMode: .fit)
+          .padding()
       }
 
       Text("\(color.description.capitalized) is an awesome color")
@@ -70,6 +75,34 @@ struct ColorView: View {
     .navigationBarTint(.white)
     .navigationBarTitleColor(.white)
     .navigationBarBackgroundColor(color)
+  }
+}
+
+struct PickerView: View {
+  @State var backgroundColor: Color = .indigo
+  @State var tint: Color = .orange
+  @State var titleColor: Color = .pink
+
+  var body: some View {
+    VStack {
+      Text("Set Colors")
+      preferenceRow("Background", color: $backgroundColor)
+      preferenceRow("Tint", color: $tint)
+      preferenceRow("Title", color: $titleColor)
+    }
+    .navigationTitle("Color Picker")
+    .navigationBarBackgroundColor(backgroundColor)
+    .navigationBarTint(tint)
+    .navigationBarTitleColor(titleColor)
+  }
+
+  func preferenceRow(
+    _ title: String,
+    color: Binding<Color>
+  ) -> some View {
+    HStack {
+      ColorPicker(title, selection: color)
+    }
   }
 }
 
