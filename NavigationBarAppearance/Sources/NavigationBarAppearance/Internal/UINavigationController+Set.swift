@@ -50,9 +50,9 @@ extension UINavigationController {
           previousTopItem?.scrollEdgeAppearance = previousScrollEdgeAppearance
 
           // Set the navigationBar back to the previous to help with animations ???
-          navigationBar.standardAppearance = previousStandardAppearance
-          navigationBar.compactAppearance = previousCompactAppearance
-          navigationBar.scrollEdgeAppearance = previousScrollEdgeAppearance
+//          navigationBar.standardAppearance = previousStandardAppearance
+//          navigationBar.compactAppearance = previousCompactAppearance
+//          navigationBar.scrollEdgeAppearance = previousScrollEdgeAppearance
         } else {
           navigationBar.standardAppearance = newStandardAppearance
           navigationBar.compactAppearance = newCompactAppearance
@@ -68,12 +68,12 @@ extension UINavigationController {
       // TODO: Figure out real defaults
       CFRunLoop.main.asyncBeforeWaiting { [navigationBar] in
         navigationBar.standardAppearance = .init()
-        navigationBar.compactAppearance = .init()
-        navigationBar.scrollEdgeAppearance = .init()
+        navigationBar.compactAppearance = nil
+        navigationBar.scrollEdgeAppearance = nil
 
-        navigationBar.topItem?.standardAppearance = .init()
-        navigationBar.topItem?.compactAppearance = .init()
-        navigationBar.topItem?.scrollEdgeAppearance = .init()
+        navigationBar.topItem?.standardAppearance = nil
+        navigationBar.topItem?.compactAppearance = nil
+        navigationBar.topItem?.scrollEdgeAppearance = nil
       }
     }
   }
