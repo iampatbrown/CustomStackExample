@@ -35,6 +35,7 @@ extension UINavigationController {
       navigationBar.scrollEdgeAppearance = newScrollEdgeAppearance
       navigationBar.tintColor = newTintColor
 
+      // TODO: I think it's better to set up an observer once inside CustomStackNavigationViewStyle
       // Wait for navigation state to change before applying appearance to top item
       CFRunLoop.main.asyncBeforeWaiting { [navigationBar, weak previousTopItem] in
         if navigationBar.items?.count ?? 0 > previousItemsCount {
