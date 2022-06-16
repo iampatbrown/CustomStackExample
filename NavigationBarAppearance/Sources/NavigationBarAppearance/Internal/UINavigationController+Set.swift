@@ -17,6 +17,9 @@ extension UINavigationController {
       if appearance.backgroundColor == .clear || appearance.backgroundColor == nil {
         newAppearance.configureWithTransparentBackground()
       } else if let backgroundColor = appearance.backgroundColor.map(UIColor.init) {
+        if backgroundColor.cgColor.alpha < 1 {
+          newAppearance.configureWithTransparentBackground()
+        }
         newAppearance.backgroundColor = backgroundColor
       }
 

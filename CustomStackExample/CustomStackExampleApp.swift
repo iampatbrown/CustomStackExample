@@ -24,7 +24,7 @@ struct ContentView: View {
       }
       .listStyle(.plain)
       .navigationBarTitle("Colors")
-      .navigationBarBackgroundColor(Color.indigo.opacity(0.5))
+      .navigationBarBackgroundColor(Color.orange.opacity(0.5))
       .navigationBarTitleColor(.black)
     }
     .navigationViewStyle(.customStack)
@@ -84,24 +84,20 @@ struct PickerView: View {
 
   var body: some View {
     VStack {
-      Text("Set Colors")
-      preferenceRow("Background", color: $backgroundColor)
-      preferenceRow("Tint", color: $tint)
-      preferenceRow("Title", color: $titleColor)
+      ColorPicker("Background", selection: $backgroundColor)
+      ColorPicker("Tint", selection: $tint)
+      ColorPicker("Title", selection: $titleColor)
+      Spacer()
     }
-    .navigationTitle("Color Picker")
+    .background(alignment: .top) {
+      Text("😃").offset(y: -100)
+    }
+    .font(.largeTitle)
+    .padding()
+    .navigationTitle("Set Colors")
     .navigationBarBackgroundColor(backgroundColor)
     .navigationBarTint(tint)
     .navigationBarTitleColor(titleColor)
-  }
-
-  func preferenceRow(
-    _ title: String,
-    color: Binding<Color>
-  ) -> some View {
-    HStack {
-      ColorPicker(title, selection: color)
-    }
   }
 }
 
