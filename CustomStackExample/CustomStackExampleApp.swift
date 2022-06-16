@@ -21,12 +21,11 @@ struct ContentView: View {
         NavigationLink("Color Picker") { PickerView() }
           .frame(height: 60)
         ForEach(colors, id: \.description, content: ColorRow.init(color:))
-          .listStyle(.plain)
-          .navigationBarTitle("Colors")
-          .navigationBarBackgroundColor(Color(white: 0.95))
-          .navigationBarTitleColor(.black)
       }
-        
+      .listStyle(.plain)
+      .navigationBarTitle("Colors")
+      .navigationBarBackgroundColor(Color(white: 0.95))
+      .navigationBarTitleColor(.black)
     }
     .navigationViewStyle(.customStack)
   }
