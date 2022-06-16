@@ -8,7 +8,10 @@ public struct CustomStackNavigationViewStyle: NavigationViewStyle {
         OnViewWillAppear { viewController in
           if let navigationController = viewController.navigationController {
             self.navigationController = navigationController
-            self.navigationController!.set(appearance: self.defaultAppearance)
+            if let defaultAppearance = self.defaultAppearance {
+              self.navigationController!.set(appearance: defaultAppearance)
+            }
+           
           } else {
             assertionFailure("UINavigationController should be present")
             self.navigationController = UINavigationController()

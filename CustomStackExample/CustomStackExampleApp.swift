@@ -24,7 +24,7 @@ struct ContentView: View {
       }
       .listStyle(.plain)
       .navigationBarTitle("Colors")
-      .navigationBarBackgroundColor(Color(white: 0.95))
+      .navigationBarBackgroundColor(Color.indigo.opacity(0.5))
       .navigationBarTitleColor(.black)
     }
     .navigationViewStyle(.customStack)

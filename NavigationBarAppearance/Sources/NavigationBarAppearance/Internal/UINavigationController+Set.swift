@@ -53,9 +53,9 @@ extension UINavigationController {
           navigationBar.topItem?.scrollEdgeAppearance = newScrollEdgeAppearance
 
           // Set the navigationBar back to the previous to help with animations ???
-          navigationBar.standardAppearance = previousStandardAppearance
-          navigationBar.compactAppearance = previousCompactAppearance
-          navigationBar.scrollEdgeAppearance = previousScrollEdgeAppearance
+//          navigationBar.standardAppearance = previousStandardAppearance
+//          navigationBar.compactAppearance = previousCompactAppearance
+//          navigationBar.scrollEdgeAppearance = previousScrollEdgeAppearance
         } else if newItemCount == previousItemsCount {
           // Set the current or new top item's appearances
           navigationBar.topItem?.standardAppearance = newStandardAppearance
